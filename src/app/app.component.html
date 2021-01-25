@@ -1,1 +1,18 @@
-<app-main-menu></app-main-menu>
+<div id="menubar">
+  <ul class="menu">
+    <li class="menu__item" routerLink="/mainpage">
+        <button mat-button>
+            <span>Main page</span>
+        </button>
+    </li>
+    <li class="menu__item" routerLink="/characters">
+        <button mat-button>
+            <span>Characters</span>
+        </button>
+    </li>
+  </ul>
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
