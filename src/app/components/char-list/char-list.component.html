@@ -2,6 +2,8 @@
     <mat-list-item *ngFor="let character of charList">
         <img matListAvatar src="{{character.image}}">
         <h3 matLine> {{character.name}} </h3>
+        <p>Status: {{character.status}}</p>
+        <p>Creation date: {{ character.created | date:'YYYY MMMM dd'}}</p>
         <button mat-button>
             <span>Details</span>
         </button>
