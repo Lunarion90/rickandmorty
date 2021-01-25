@@ -4,6 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { AppComponent } from './app.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
@@ -24,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     MatListModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

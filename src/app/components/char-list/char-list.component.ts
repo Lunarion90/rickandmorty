@@ -1,3 +1,4 @@
+import { filter } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { RickCharsGrabService } from '../../services/rick-chars-grab.service';
 import { CustomCharacter, StatusEnum } from '../../classes/character';
@@ -9,20 +10,29 @@ import { CustomCharacter, StatusEnum } from '../../classes/character';
 })
 export class CharListComponent implements OnInit {
 
-  public charList: CustomCharacter[] = []
+  public charList: CustomCharacter[] = [];
+  public lastLoadedPage: number = 0;
+  public maxReached: boolean = false;
+
   constructor(private RickCharsGrabService: RickCharsGrabService) { }
 
   ngOnInit(): void {
     this.getCharList(1);
+    this.getCharList(2);
   }
 
   public getCharList(page: number) {  
     this.RickCharsGrabService.getTwentyCharList(page).subscribe((characters: any) => {
-      this.charList = characters.results;
+      this.charList = this.charList.concat(characters.results);
+      this.lastLoadedPage++;
     },
-    error => alert('Something went wrong!')
+    error => this.maxReached = true
     );
   }
 
+  public onScroll(){
+    if(!this.maxReached)
+    this.getCharList(this.lastLoadedPage + 1);
+  }
 
 }
