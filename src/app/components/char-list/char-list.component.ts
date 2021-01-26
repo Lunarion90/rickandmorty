@@ -1,4 +1,3 @@
-import { filter } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { RickCharsGrabService } from '../../services/rick-chars-grab.service';
 import { CustomCharacter, StatusEnum } from '../../classes/character';
@@ -10,6 +9,8 @@ import { CustomCharacter, StatusEnum } from '../../classes/character';
 })
 export class CharListComponent implements OnInit {
 
+
+  searchName = "";
   public charList: CustomCharacter[] = [];
   public lastLoadedPage: number = 0;
   public maxReached: boolean = false;

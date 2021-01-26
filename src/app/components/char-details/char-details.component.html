@@ -1,1 +1,14 @@
-<h1 class="title">Characters</h1>
+<button mat-flat-button routerLink="/characters">
+        <span>Back</span>
+</button>
+<mat-list-item>
+    <img matListAvatar src="{{character.image}}">
+    <h3 matLine> {{character.name}} </h3>
+    <p>Status: {{character.status}}</p>
+    <p>Species: {{character.species}}</p>
+    <p>Type: {{character.type}}</p>
+    <p>Gender: {{character.gender}}</p>
+    <p>Origin: {{character.origin.name}}</p>
+    <p>Location: {{character.location.name}}</p>
+    <p>Creation date: {{ character.created | date:'YYYY-MM-dd'}}</p>
+</mat-list-item>

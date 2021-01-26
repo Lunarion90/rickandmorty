@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'mainpage' },
   { path: 'mainpage', component: MainMenuComponent },
   { path: 'characters', component: CharListComponent },
-  { path: 'details', component: CharDetailsComponent }
+  { path: 'details/:id', component: CharDetailsComponent }
 ];
 
 @NgModule({
