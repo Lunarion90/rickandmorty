@@ -10,13 +10,16 @@ export class RickCharsGrabService {
 
   public getTwentyCharList(page: number, name?: string, status?: string, species?: string, type?: string, gender?: string){
 
+
     let endpoint: string = "https://rickandmortyapi.com/api/character/?page=".concat(String(page));
 
-    if (name && name.length > 0) endpoint.concat("&name=").concat(name);
-    if (status && status.length > 0) endpoint.concat("&status=").concat(status);
-    if (species && species.length > 0) endpoint.concat("&species=").concat(species);
-    if (type && type.length > 0) endpoint.concat("&type=").concat(type);
-    if (gender && gender.length > 0) endpoint.concat("&gender=").concat(gender);
+    if (name && name.length > 0) endpoint = endpoint.concat("&name=").concat(name);
+    if (status && status.length > 0) endpoint = endpoint.concat("&status=").concat(status);
+    if (species && species.length > 0) endpoint = endpoint.concat("&species=").concat(species);
+    if (type && type.length > 0) endpoint = endpoint.concat("&type=").concat(type);
+    if (gender && gender.length > 0) endpoint = endpoint.concat("&gender=").concat(gender);
+
+    console.log(endpoint);
 
     return this.http.get(endpoint);
   }
