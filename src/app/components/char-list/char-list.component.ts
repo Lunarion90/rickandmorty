@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RickCharsGrabService } from '../../services/rick-chars-grab.service';
 import { CustomCharacter, StatusEnum } from '../../classes/character';
 
@@ -15,7 +16,7 @@ export class CharListComponent implements OnInit {
   public lastLoadedPage: number = 0;
   public maxReached: boolean = false;
 
-  constructor(private RickCharsGrabService: RickCharsGrabService) { }
+  constructor(private RickCharsGrabService: RickCharsGrabService, private router: Router) { }
 
   ngOnInit(): void {
     this.getCharList(1);
@@ -36,4 +37,12 @@ export class CharListComponent implements OnInit {
     this.getCharList(this.lastLoadedPage + 1);
   }
 
+  public navDetails(status: string, id: number){
+    console.log("hello there")
+    if (status === "Alive") {
+      this.router.navigate(["../details/"+id]);
+    } else {
+      alert("Character is Dead or has unknown status, please pick another character.")
+    }
+  }
 }

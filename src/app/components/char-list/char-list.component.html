@@ -21,7 +21,7 @@
         <h3 matLine> {{character.name}} </h3>
         <p>Status: {{character.status}}</p>
         <p>Creation date: {{ character.created | date:'YYYY-MM-dd'}}</p>
-        <button mat-button  routerLink="/details/{{character.id}}">
+        <button mat-button (click)="navDetails(character.status,character.id)">
             <span>Details</span>
         </button>
     </mat-list-item>

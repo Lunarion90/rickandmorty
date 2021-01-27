@@ -12,14 +12,14 @@ import { switchMap } from 'rxjs/operators';
 })
 export class CharDetailsComponent implements OnInit {
 
-  public character: CustomCharacter | undefined;
+  public character!: CustomCharacter;
   public selectedCharacterID: number = 1;
 
   constructor(
     private RickCharsGrabService: RickCharsGrabService,
     private route: ActivatedRoute
   ) {
-    this.route.params.subscribe(params => {console.log(params); this.selectedCharacterID = Number(params.id)})
+    this.route.params.subscribe(params => this.selectedCharacterID = Number(params.id))
    };
 
   ngOnInit(): void {
