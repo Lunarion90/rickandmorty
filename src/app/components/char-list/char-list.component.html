@@ -1,8 +1,8 @@
 <div class="form-group">
     <label for="namefilter">Search: </label>
-    <input id="namefilter" class="form-control" type="text" (input)="onFilterName($event.target.value)" placeholder="Search for name">
+    <input id="namefilter" class="form-control" type="text" (input)="onFilterName($any($event.target).value)" placeholder="Search for name">
     <label for="statefilter">Status: </label>
-    <select id="statefilter" placeholder="Status" (input)="onFilterStatus($event.target.value)">
+    <select id="statefilter" placeholder="Status" (input)="onFilterStatus($any($event.target).value)">
         <option value=""></option>
         <option value="Dead">Dead</option>
         <option value="Alive">Alive</option>
@@ -49,9 +49,5 @@
       </tr>
     </tbody>
   </table>
-
-  <ng-template #noResults>
-    <p>No results found for "{{ searchText }}".</p>
-  </ng-template>
 </div>
 
