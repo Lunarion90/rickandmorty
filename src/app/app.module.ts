@@ -14,15 +14,13 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { CharListComponent } from './components/char-list/char-list.component';
 import { CharDetailsComponent } from './components/char-details/char-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainMenuComponent,
     CharListComponent,
-    CharDetailsComponent,
-    SearchFilterPipe
+    CharDetailsComponent
   ],
   imports: [
     BrowserModule,

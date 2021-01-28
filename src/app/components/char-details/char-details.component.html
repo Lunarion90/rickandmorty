@@ -1,16 +1,18 @@
-<button mat-flat-button routerLink="/characters">
-        <span>Back</span>
-</button>
-<mat-list-item>
-    <ng-container *ngIf="character">
-        <img matListAvatar src="{{character.image}}">
-        <h3 matLine> {{character.name}} </h3>
-        <p>Status: {{character.status}}</p>
-        <p>Species: {{character.species}}</p>
-        <p>Type: {{character.type}}</p>
-        <p>Gender: {{character.gender}}</p>
-        <p>Origin: {{character.origin?.name}}</p>
-        <p>Location: {{character.location.name}}</p>
-        <p>Creation date: {{ character.created | date:'YYYY-MM-dd'}}</p>
-    </ng-container>
-</mat-list-item>
+
+<button mat-flat-button routerLink="/characters">Back</button>
+
+<div class="char-data">
+    <mat-list-item>
+        <ng-container *ngIf="character">
+            <img matListAvatar src="{{character.image}}">
+            <h3 matLine>{{character.name}} </h3>
+            <p><span class="attr-label">Status: </span>{{character.status}}</p>
+            <p><span class="attr-label">Species: </span>{{character.species}}</p>
+            <p><span class="attr-label">Type: </span>{{character.type}}</p>
+            <p><span class="attr-label">Gender: </span>{{character.gender}}</p>
+            <p><span class="attr-label">Origin: </span>{{character.origin?.name}}</p>
+            <p><span class="attr-label">Location: </span>{{character.location.name}}</p>
+            <p><span class="attr-label">Creation date: </span>{{ character.created | date:'YYYY-MM-dd'}}</p>
+        </ng-container>
+    </mat-list-item>
+</div>

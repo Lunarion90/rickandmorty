@@ -19,8 +19,6 @@ export class RickCharsGrabService {
     if (type && type.length > 0) endpoint = endpoint.concat("&type=").concat(type);
     if (gender && gender.length > 0) endpoint = endpoint.concat("&gender=").concat(gender);
 
-    console.log(endpoint);
-
     return this.http.get(endpoint);
   }
 
